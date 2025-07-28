@@ -11,20 +11,23 @@
         <h1>Zayafin</h1>
         <input type="button" value="Adicionar" class="estiloBotao" id="adicionarConta">
 
-        <table>
-            <thead>
-                <tr>
-                    <td class="col-descricao">Descrição</td>
-                    <td class="col-valor">Valor</td>
-                    <td class="col-vencimento">Venc.</td>
-                    <td class="col-status">Status</td>
-                    <td class="col-acao">Ação</td>
-                </tr>
-            </thead>
-            <tbody id="corpoTabelaContas">
+        <div class="rolagemHorizontal">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="col-descricao">Descrição</td>
+                        <td class="col-valor">Valor</td>
+                        <td class="col-vencimento">Venc.</td>
+                        <td class="col-status">Status</td>
+                        <td class="col-acao">Ação</td>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabelaContas">
                 </tbody>
-        </table>
+            </table>
+        </div>
 
+        <!-- Quadro de Totalização-->
         <div class="quadroTotalizacao">
             <div class="total-item">
                 <span>Total Pendente</span>
@@ -36,7 +39,7 @@
             </div>
         </div>
 
-        <footer>Feito por <b>Guilherme Castro</b></footer>
+        <footer>Feito por <b><a href="https://28zcastro.github.io/portfolio/">Guilherme Castro</a></b></footer>
     </main>
 
     <div class="overlay" id="overlayForm" style="display: none;">
@@ -70,11 +73,10 @@
             </form>
         </div>
     </div>
+    <!-- FireBase-->
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-    
     <script>
-        // SUBSTITUA ESTE OBJETO COM AS SUAS PRÓPRIAS CREDENCIAIS DO FIREBASE
         const firebaseConfig = {
         apiKey: "AIzaSyD8BaURW-pRiViYgjSRDG0cxKhXrXuTWWw",
         authDomain: "zayafin-731d4.firebaseapp.com",
