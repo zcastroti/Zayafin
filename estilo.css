@@ -52,7 +52,7 @@ h1 {
 /*------------------------------------
     Inputs, Botões e Selects
 ------------------------------------*/
-input, button, select {
+input, button {
     background: white;
     border: solid 1px #222;
     height: 30px; }
@@ -187,7 +187,7 @@ tbody > tr > td { font-size: 14px; }
 ------------------------------------*/
 .quadro-adicionar-conta {
     background: white;
-    padding: 25px;
+    padding: 10px;
     border: 1px solid #222;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
     width: 90%;
