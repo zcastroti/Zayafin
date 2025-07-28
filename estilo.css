@@ -12,11 +12,11 @@
     box-sizing: border-box;
     font-size: 16px; }
 
-:root { --corPrincipal: #504b4b; }
+:root { --corPrincipal: #508b50; }
 :focus{ outline: none; }
 a { text-decoration: none; }
 b { color: var(--corPrincipal); } 
-footer { margin-top: 20px; }
+footer { margin-top: 5px; }
 
 /*------------------------------------
         Body
@@ -37,7 +37,7 @@ main {
     gap: 20px;
     padding: 20px; 
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     margin: auto; }
 
 /*------------------------------------
@@ -45,9 +45,8 @@ main {
 ------------------------------------*/
 h1 {
     color: var(--corPrincipal);
-    margin-bottom: 20px;
     font-size: 60px;
-    text-shadow: 3px 3px 3px #b1b1b1; }
+    text-shadow: 3px 3px #222; }
 
 /*------------------------------------
     Inputs, Botões e Selects
@@ -60,7 +59,7 @@ input, button {
 /*------------------------------------
     Input Number Text Password
 ------------------------------------*/
-input[type="number"], input[type="text"], input[type="password"] { padding: 0px 10px; width: 100%; }
+input[type="number"], input[type="text"], input[type="password"], input[type="date"] { padding: 0px 10px; width: 100%; }
 
 /*------------------------------------
     Overlay
@@ -76,6 +75,12 @@ input[type="number"], input[type="text"], input[type="password"] { padding: 0px 
     display: flex;
     justify-content: center;
     align-items: center; }
+
+/*------------------------------------
+    Rolagem Horizontal
+------------------------------------*/
+div.rolagemHorizontal { 
+width: 100%; overflow-x: auto; }
 
 /*------------------------------------
     Estilo Botão
@@ -103,8 +108,7 @@ input[type="number"], input[type="text"], input[type="password"] { padding: 0px 
     font-weight: 900;
     font-size: 19px;
     cursor: pointer; }
-
-.botaoEngrenagem:hover { color: #e02525; }
+.botaoEngrenagem:hover { color: var(--corPrincipal); }
 
 /*------------------------------------
     Tabela de Contas
@@ -119,6 +123,7 @@ thead > tr > td {
     border: solid 1px #222;
     background: #b1b1b1;
     height: 30px;
+    font-size: 14px;
     font-weight: 700;
     padding: 0px 5px; }
 
@@ -134,11 +139,11 @@ td {
 
 tbody > tr > td { font-size: 14px; }
 
-.col-descricao { text-align: left; text-indent: 5px; }
-.col-valor { width: 80px; max-width: 80px; }
+.col-descricao {  width: 100px; max-width: 100px; text-align: left; text-indent: 5px; }
+.col-valor { width: 70px; max-width: 70px; }
 .col-vencimento { width: 60px; max-width: 60px; }
-.col-status { width: 65px; max-width: 85px; }
-.col-acao { width: 60px; max-width: 60px; }
+.col-status { width: 65px; max-width: 65px; }
+.col-acao { width: 55px; max-width: 55px; }
 
 .statusPago { color: #55b955; }
 .statusPendente { color: #ff7070; }
@@ -158,7 +163,6 @@ tbody > tr > td { font-size: 14px; }
 .quadroTotalizacao {
     box-shadow: 2px 2px 5px #b1b1b1;
     width: 100%;
-    max-width: 500px;
     padding: 5px;
     background: white;
     border: 1px solid #222;
@@ -187,15 +191,15 @@ tbody > tr > td { font-size: 14px; }
 ------------------------------------*/
 .quadro-adicionar-conta {
     background: white;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #222;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     width: 90%;
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    animation: fadeIn 0.3s ease-out; /* Animação simples de entrada */
+    gap: 5px;
+    animation: fadeIn 0.3s ease-out;
 }
 
 @keyframes fadeIn {
@@ -205,38 +209,30 @@ tbody > tr > td { font-size: 14px; }
 
 .quadro-adicionar-conta h2 {
     color: var(--corPrincipal);
-    font-size: 26px; /* Aumentado o tamanho do título */
-    text-align: center;
-    margin-bottom: 15px; 
-}
+    font-size: 25px;
+    text-align: center; }
 
-.quadro-adicionar-conta label {
-    font-weight: 600; /* Mais peso na fonte do label */
-    margin-bottom: 5px;
-    display: block; 
-}
+.quadro-adicionar-conta label { font-weight: 600; }
 
 .quadro-adicionar-conta input,
 .quadro-adicionar-conta select {
     width: 100%;
-    padding: 10px 12px; /* Mais padding para campos */
-    margin-bottom: 15px; 
-    border: 1px solid #ccc;
-    box-sizing: border-box; 
-    font-size: 16px; /* Garante que o texto dentro seja legível */
-}
+    height: 30px;
+    padding: 0px 10px;
+    margin-top: 5px;
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; }
 
 .botoes-form {
     display: flex;
-    justify-content: space-around;
-    gap: 15px; /* Aumentado o espaço entre botões */
+    justify-content: center;
+    gap: 15px;
     margin-top: 20px;
 }
 
 .botoes-form .estiloBotao {
-    flex: 1; 
-    min-width: 90px; /* Garante um tamanho mínimo */
-}
+    width: 90px;
+    min-width: 90px; }
 
 /* Estilo para o overlay quando ativo - embora o JS já use 'display: flex' */
 .overlay.active {
