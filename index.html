@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zayafin</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <main>
+        <h1>Zayafin</h1>
+        <input type="button" value="Adicionar" class="estiloBotao" id="adicionarConta">
+
+        <table>
+            <thead>
+                <tr>
+                    <td class="col-descricao">Descrição</td>
+                    <td class="col-valor">Valor</td>
+                    <td class="col-vencimento">Venc.</td>
+                    <td class="col-status">Status</td>
+                    <td class="col-acao">Ação</td>
+                </tr>
+            </thead>
+            <tbody id="corpoTabelaContas">
+                </tbody>
+        </table>
+
+        <div class="quadroTotalizacao">
+            <div class="total-item">
+                <span>Total Pendente</span>
+                <span id="totalPendente">0,00</span>
+            </div>
+            <div class="total-item">
+                <span>Total Pago</span>
+                <span id="totalPago">0,00</span>
+            </div>
+        </div>
+
+        <footer>Feito por <b>Guilherme Castro</b></footer>
+    </main>
+
+    <div class="overlay" id="overlayForm" style="display: none;">
+        <div class="quadro-adicionar-conta">
+            <h2>Adicionar Nova Conta</h2> 
+            <form id="formAdicionarConta">
+                <input type="hidden" id="contaId" value=""> 
+
+                <label for="nomeConta">Descrição:</label>
+                <input type="text" id="nomeConta" required>
+
+                <label for="valorConta">Valor:</label>
+                <input type="number" id="valorConta" step="0.01" required>
+
+                <label for="vencimentoConta">Vencimento:</label>
+                <input type="date" id="vencimentoConta" required>
+
+                <label for="statusConta">Status:</label>
+                <select id="statusConta" required>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Pago">Pago</option>
+                </select>
+                
+                <div class="botoes-form">
+                    <button type="submit" class="estiloBotao" id="btnSalvarAdicao">Salvar</button>
+                    <button type="button" class="estiloBotao" id="cancelarAdicao">Cancelar</button>
+
+                    <button type="button" class="estiloBotao" id="btnGravarEdicao" style="display: none;">Gravar</button>
+                    <button type="button" class="estiloBotao btn-excluir" id="btnExcluirConta" style="display: none;">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    
+    <script>
+        // SUBSTITUA ESTE OBJETO COM AS SUAS PRÓPRIAS CREDENCIAIS DO FIREBASE
+        const firebaseConfig = {
+        apiKey: "AIzaSyD8BaURW-pRiViYgjSRDG0cxKhXrXuTWWw",
+        authDomain: "zayafin-731d4.firebaseapp.com",
+        projectId: "zayafin-731d4",
+        storageBucket: "zayafin-731d4.firebasestorage.app",
+        messagingSenderId: "662981263503",
+        appId: "1:662981263503:web:de0fe38b0d7380b33c70fa"
+        };
+
+        // Inicialize o Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Obtenha uma referência para o serviço Firestore
+        const db = firebase.firestore();
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+/*------------------------------------
+    Estilo Global 
+------------------------------------*/
+* {
+    margin: 0; 
+    padding: 0;
+    font-family: 'Lexend', arial;
+    color: #222;
+    box-sizing: border-box;
+    font-size: 16px; }
+
+:root { --corPrincipal: #504b4b; }
+:focus{ outline: none; }
+a { text-decoration: none; }
+b { color: var(--corPrincipal); } 
+footer { margin-top: 20px; }
+
+/*------------------------------------
+        Body
+------------------------------------*/
+body {
+    width: 100%;
+    height: 100vh;
+    background: whitesmoke; }
+
+/*------------------------------------
+    Main 
+------------------------------------*/
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px; 
+    width: 100%;
+    max-width: 500px;
+    margin: auto; }
+
+/*------------------------------------
+    H1
+------------------------------------*/
+h1 {
+    color: var(--corPrincipal);
+    margin-bottom: 20px;
+    font-size: 60px;
+    text-shadow: 3px 3px 3px #b1b1b1; }
+
+/*------------------------------------
+    Inputs, Botões e Selects
+------------------------------------*/
+input, button, select {
+    background: white;
+    border: solid 1px #222;
+    height: 30px; }
+
+/*------------------------------------
+    Input Number Text Password
+------------------------------------*/
+input[type="number"], input[type="text"], input[type="password"] { padding: 0px 10px; width: 100%; }
+
+/*------------------------------------
+    Overlay
+------------------------------------*/
+.overlay {
+    z-index: 998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #00000099;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+/*------------------------------------
+    Estilo Botão
+------------------------------------*/
+.estiloBotao {
+    box-shadow: 2px 2px 5px #b1b1b1;
+    background: var(--corPrincipal);
+    color: white; 
+    font-weight: 500;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid #222; }
+
+.estiloBotao:hover { 
+    box-shadow: 1px 1px 5px #b1b1b1;
+    opacity: 0.9; }
+
+/*------------------------------------
+    Botão ⚙
+------------------------------------*/
+.botaoEngrenagem {
+    background: none;
+    border: none;
+    font-weight: 900;
+    font-size: 19px;
+    cursor: pointer; }
+
+.botaoEngrenagem:hover { color: #e02525; }
+
+/*------------------------------------
+    Tabela de Contas
+------------------------------------*/
+table {
+    box-shadow: 2px 2px 5px #b1b1b1;
+    width: 100%; 
+    border-collapse: collapse;
+    text-align: center; }
+
+thead > tr > td { 
+    border: solid 1px #222;
+    background: #b1b1b1;
+    height: 30px;
+    font-weight: 700;
+    padding: 0px 5px; }
+
+td { 
+    background: white;
+    height: 30px;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    padding: 0px 5px;
+    border: solid 1px #222;
+    vertical-align: middle; }
+
+tbody > tr > td { font-size: 14px; }
+
+.col-descricao { text-align: left; text-indent: 5px; }
+.col-valor { width: 80px; max-width: 80px; }
+.col-vencimento { width: 60px; max-width: 60px; }
+.col-status { width: 65px; max-width: 85px; }
+.col-acao { width: 60px; max-width: 60px; }
+
+.statusPago { color: #55b955; }
+.statusPendente { color: #ff7070; }
+
+/*------------------------------------
+    (Drag and Drop)
+------------------------------------*/
+.is-dragging {
+    opacity: 0.5;
+    border: 2px dashed #000; }
+
+.drag-over { border-top: 2px solid var(--corPrincipal); }
+
+/*------------------------------------
+    Quadro de Totalização
+------------------------------------*/
+.quadroTotalizacao {
+    box-shadow: 2px 2px 5px #b1b1b1;
+    width: 100%;
+    max-width: 500px;
+    padding: 5px;
+    background: white;
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; }
+
+.total-item { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500; }
+
+#totalPendente { color: #ff7070; }
+#totalPago { color: #55b955; }
+
+
+
+
+
+
+
+
+/*------------------------------------
+    Quadro Adicionar/Editar Conta (Modal)
+------------------------------------*/
+.quadro-adicionar-conta {
+    background: white;
+    padding: 25px;
+    border: 1px solid #222;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 0.3s ease-out; /* Animação simples de entrada */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.quadro-adicionar-conta h2 {
+    color: var(--corPrincipal);
+    font-size: 26px; /* Aumentado o tamanho do título */
+    text-align: center;
+    margin-bottom: 15px; 
+}
+
+.quadro-adicionar-conta label {
+    font-weight: 600; /* Mais peso na fonte do label */
+    margin-bottom: 5px;
+    display: block; 
+}
+
+.quadro-adicionar-conta input,
+.quadro-adicionar-conta select {
+    width: 100%;
+    padding: 10px 12px; /* Mais padding para campos */
+    margin-bottom: 15px; 
+    border: 1px solid #ccc;
+    box-sizing: border-box; 
+    font-size: 16px; /* Garante que o texto dentro seja legível */
+}
+
+.botoes-form {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px; /* Aumentado o espaço entre botões */
+    margin-top: 20px;
+}
+
+.botoes-form .estiloBotao {
+    flex: 1; 
+    min-width: 90px; /* Garante um tamanho mínimo */
+}
+
+/* Estilo para o overlay quando ativo - embora o JS já use 'display: flex' */
+.overlay.active {
+    display: flex;
+}
