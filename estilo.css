@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 /*------------------------------------
     Estilo Global 
@@ -7,7 +7,7 @@
 * {
     margin: 0; 
     padding: 0;
-    font-family: 'Lexend', arial;
+    font-family: 'Questrial', arial;
     color: #222;
     box-sizing: border-box;
     font-size: 16px; }
@@ -238,3 +238,4 @@ tbody > tr > td { font-size: 14px; }
 .overlay.active {
     display: flex;
 }
+
